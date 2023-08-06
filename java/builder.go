@@ -131,7 +131,7 @@ var (
 
 	turbine, turbineRE = pctx.RemoteStaticRules("turbine",
 		blueprint.RuleParams{
-			Command: `$reTemplate${config.JavaCmd} ${config.JavaVmFlags} -jar ${config.TurbineJar} --output $out.tmp ` +
+			Command: `$reTemplate${config.JavaCmd} ${config.JavaVmFlags} -Xmx6G -jar ${config.TurbineJar} --output $out.tmp ` +
 				`--sources @$out.rsp  --source_jars $srcJars ` +
 				`--javacopts ${config.CommonJdkFlags} ` +
 				`$javacFlags -source $javaVersion -target $javaVersion -- $bootClasspath $classpath && ` +
